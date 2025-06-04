@@ -1,0 +1,7 @@
+name: Map Pins
+description: 'Provides a Map Pin form in custom block on a site.'
+type: module
+core_version_requirement: ^9 || ^10
+package: Custom
+
+

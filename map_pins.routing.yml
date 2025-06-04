@@ -1,0 +1,8 @@
+map_pins.MapPin:
+  path: '/map-pins'
+  defaults:
+    _form: '\Drupal\map_pins\Form\MapPinsForm'
+    _title: 'Hot Spots'
+  requirements:
+    _permission: 'access content'
+    _access: 'TRUE'

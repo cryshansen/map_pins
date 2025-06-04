@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ * Map Pins module's procedural hooks and functions.
+ */
+/**
+ * Implements hook_theme().
+ */
+function map_pins_theme() {
+
+  return [   
+    'map_pins_form'=> [
+        'render element' => 'form',
+        'h4' => t('H4 Test from theme module.'),
+      ],  
+  ];
+}
+
+function map_pins_mail($key, &$message, $params) {
+ $options = array(
+   'langcode' => $message['langcode'],
+ );
+ switch ($key) {
+   case 'general_mail':
+     $message['from'] = \Drupal::config('system.site')->get('mail');
+     $message['subject'] = t('General mail Map Pins: @subject', ['@subject' => $params['subject']], $options);
+     $message['body'][] = $params['message'];
+     break;
+ }
+}

@@ -1,0 +1,46 @@
+<?php
+use Drupal\Core\Database\Database;
+ 
+/**
+* @file
+* Install, update and uninstall functions for map_pins
+*/
+function map_pins_schema(){
+    $schema['map_pins'] = array(
+        'description' => 'The table for storing the map pins data.',
+        'fields' => array(
+            'id' => array(
+                'description' => 'The primary identifier for Map Pins form',
+                'type' => 'serial',
+                'not null' => TRUE,
+                'unsigned' => TRUE,
+            ),
+            'first_name' => array(
+                'description' => 'First name',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+            ),
+           'last_name' => array(
+                'description' => 'Last name.',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+            ),
+            'email' => array(
+                'description' => 'email',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+            ),
+            'long_latitude' => array(
+                'description' => 'The pin drop area. Longitude Latitude',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+            ),
+        ),
+        'primary key' => array('id'),
+    );
+    return $schema;
+}
